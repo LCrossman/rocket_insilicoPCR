@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="keywords" content="genome, sequence, PCR, in silico, software">
+<meta name="description" content="In Silico PCR software.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In Silico PCR - a program to carry out PCR on provided genome sequence fasta with primer sequences</title>
+<link rel="stylesheet" href="assets/w.css">
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">-->
+<link rel="stylesheet" href="assets/water.min.css">
+<link rel="shortcut icon" href="favicon.ico">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script type="text/javascript">
+  function onSubmit(token) {
+      alert("callback ready!");
+      document.getElementById('recaptchaResponse').value = token;
+      }
+</script>
+</head>
+<!--
+<body id="bv" onload="showtw();">
+-->
+<body id="bv">
+<div class="tg">
+<div class="title">
+InSilicoPCR version 0.1  
+</div>
+<h1>Online <i>In Silico</i> PCR Tool: Generate Amplification Results from Your Nucleotide Sequence and Primers</h1>
+</div>
+<div id="mv">
+<!--
+</div>
+<div style="font-size:100%" >
+<span class="redc00">
+</span>
+If you have problems with this service please feel free to raise an issue on GitHub
+</span>
+<span class="redc00"></span>
+</div>
+-->
+<h2>About</h2>
+  InSilicoPCR
+is a program for unix-like operating systems.  <br>It is a computational tool used to calculate the theoretical PCR product directly from
+a provided DNA sequence and a given set of primers.&nbsp;
+The latest version is 0.1 (2023/Nov).
+<!--
+<span class="new">New!</span>&nbsp; (2023/Nov/08)
+-->
+<p>
+<h3>Input Format<sup>*</sup></h3>
+<p>
+    Nucleotide Fasta format for the sequence fasta.&nbsp; <a href="example.fasta">example (example.fasta)</a><br>
+    Tab delimited text file format for the primer sets.&nbsp; <a href="rpoB_primers.txt">primers (rpoB_primers.txt)</a>
+</blockquote>
+<h3>Usage:</h3>
+
+    <form action="/upload" id="seqform" enctype="multipart/form-data" method="post"><fieldset style="width:750px;"><legend>Input Parameters:</legend>
+Upload nucleotide sequence fasta file *maximum size 5Mb<br>
+<input type="file" name="seqfile">
+<br>	
+<label for="option_m">Allow one mismatch per primer sequence (option m)</label>
+<select id="option_m" name="option_m">
+<option value="False">False</option>
+<option value="True">True</option>
+</select>
+</label>
+<label for="option_c">Allow amplification from one primer to the end of the sequence (better if sequences are short)</label>
+<select id="option_c" name="option_c">
+<option value="False">False</option>
+<option value="True">True</option>
+</select></label>
+<label for="option_l">Maximum length of product (3000bp default) - must be between 40 & 3000</label>
+<input type="text" name="option_l", value="3000", style="width: 50px">
+Upload primer set file
+<input type="file" name="primers">
+</fieldset>
+<div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="onSubmit"></div>
+<input type="hidden" id="recaptchaResponse" name="recaptcha">
+<input type="submit" value="Submit">
+</form>
+This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+<h3>Usage of command line program:</h3>
+<pre>
+% <b>InSilicoPCR</b><b><i> [options] --s [fasta_file] -p [primer_set.txt]</i></b>
+</pre>
+<a href="https://github.com/LCrossman"><sup>*</sup>GitHub site for questions, issues & comments</a>
+<div id="consent-popup" class="hidden">
+  <p> Google places cookies on this website for the Captcha.
+    Please <a id="accept" href="#"> Accept</a> these before using the site or email to request an alternative
+i</p></div>
+<script type="application/javascript" src="assets/app.js"></script>
+&#169; 2023 L. Crossman
+</div>
+</ul>
+</div>
+</body>
+</html>

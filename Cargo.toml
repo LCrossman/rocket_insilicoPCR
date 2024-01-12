@@ -1,0 +1,27 @@
+[package]
+name = "insilicopcr"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "InSilicoPCR"
+path = "src/lib.rs"
+
+[dependencies]
+reqwest = { version = "0.11.23", features = ["blocking", "json"] }
+rocket-governor = "0.2.0-rc.1"
+aead = { version = "0.5.2", features = ["getrandom"] }
+chacha20poly1305 = { version = "0.9.0", features = ["stream", "heapless"] }
+anyhow = "1.0.75"
+sha256 = "1.4.0"
+rand = "0.8"
+tokio = { version = "1.33.0", features = ["full"] }
+tokio-util = "0.7.10"
+serde = {version="1.0", features=["derive"]}
+futures = "0.3.28"
+rocket = { version = "0.5.0", features = ["json"] }
+clap = { version = "4.3.21", features = ["derive"] }
+bio="0.38.0"
+regex="1.5"
